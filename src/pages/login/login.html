@@ -1,0 +1,26 @@
+<ion-content>
+
+  <img src="assets/icon.png" class="logo">
+
+  <form [formGroup]="form" (submit)="submit(form)">
+    <ion-list>
+      <ion-item>
+        <ion-label ion-text color="dark" floating>E-mail</ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label ion-text color="dark" floating>Senha</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <div padding>
+      <button type="submit" ion-button block [disabled]="loading || form.invalid">
+        Entrar
+        <ion-spinner *ngIf="loading"></ion-spinner>
+      </button>
+    </div>
+  </form>
+
+</ion-content>

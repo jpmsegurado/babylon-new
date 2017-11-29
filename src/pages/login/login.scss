@@ -1,0 +1,26 @@
+page-login {
+    .logo  {
+        display: block;
+        margin: 50px auto;
+    }
+
+    .scroll-content, .list, .item {
+        background-color: color($colors, amarelo);
+    }
+
+    .item input {
+        color: color($colors, dark);
+    }
+
+    .item, .item-inner {
+        border-color: color($colors, dark);
+    }
+
+    .list .item-block .item-inner {
+        border-bottom: 1px solid color($colors, dark);
+    }
+
+    .list .item-input:last-child {
+        border-bottom: 1px solid color($colors, dark);
+    }
+}

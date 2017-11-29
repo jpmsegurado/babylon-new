@@ -1,3 +1,47 @@
 page-home {
+    .info {
+        width: 100%;
+        height: 50vh;
+        background-color: color($colors, amarelo);
+        color: color($colors, white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+        .body {
+            width: 100%;
+        }
+
+        .income, .outgoing {
+            float: left;
+            width: 50%;
+            padding: 10px;
+        }
+
+        .income {
+            text-align: right;
+        }
+
+        .income-outgoing {
+            width: 100%;
+            float: left;
+        }
+
+        h2 {
+            margin: 0 0 40px 0;
+            text-align: center;
+            float: left;
+            width: 100%;
+        }
+
+        .income {
+            border-right: solid 1px color($colors, white);
+            margin: 0;
+        }
+
+        .outgoing {
+            border-left: solid 1px color($colors, white);
+            margin: 0;
+        }
+    }
 }
