@@ -7,10 +7,32 @@ page-home {
       top: 0px;
       left: 0px;
       right: 0px;
-      h4, p{
-        text-align: right;
+
+      h4.text-center {
+        position: absolute;
+        top: 0;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 25px;
+      }
+      .row {
+        position: absolute;
+        top: 58px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 62px;
+      }
+
+      .valor {
+        font-size: 1.3rem;
+        font-weight: bold;
       }
     }
+
   
     .menu{
       background-color: color($colors, light);
@@ -53,11 +75,11 @@ page-home {
   
     .item-menu p{
       position: absolute;
-      bottom: 20px;
+      bottom: 0px;
       text-align: center;
       left: 0;
       right: 0;
-      top: 80px;
+      top: 90px;
       height: 16px;
       margin: auto;
     }

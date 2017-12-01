@@ -21,6 +21,7 @@ import { AddIncomePage } from '../pages/add-income/add-income';
 import { LoginPage } from '../pages/login/login';
 
 import { ChartComponent } from '../components/chart/chart';
+import { ReportPage } from '../pages/report/report';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ChartComponent } from '../components/chart/chart';
     AddIncomePage,
     LoginPage,
     ChartComponent,
+    ReportPage,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ import { ChartComponent } from '../components/chart/chart';
     AddIncomePage,
     LoginPage,
     ChartComponent,
+    ReportPage,
   ],
   providers: [
     AngularFireAuth,

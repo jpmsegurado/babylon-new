@@ -16,37 +16,37 @@
         <p>
           Receitas
         </p>
-        <h4 *ngIf="!loading">R$ 2500,00</h4>
-        <h4 *ngIf="loading">...</h4>
+        <p class="valor" *ngIf="!loading" ion-text color="income">R$ 2500,00</p>
+        <p *ngIf="loading">...</p>
       </ion-col>
       <ion-col width-50 class="text-left">
         <p>
           Despesas
         </p>
-        <h4 *ngIf="!loading">R$ 800,00</h4>
-        <h4 *ngIf="loading">...</h4>
+        <p class="valor" *ngIf="!loading">R$ 800,00</p>
+        <p *ngIf="loading">...</p>
       </ion-col>
     </ion-row>
   </div>
 
   <div class="menu">
 
-    <button class="item-menu incomes" color="white" (click)="openAddIncome()">
+    <button class="item-menu incomes" ion-button color="white" (click)="openAddIncome()">
       <ion-icon name="logo-usd" color="incomes"></ion-icon>
       <p>Minhas receitas</p>
     </button>
 
-    <button class="item-menu spendings" color="white" (click)="openAddOutgoing()">
+    <button class="item-menu spendings" ion-button color="white" (click)="openAddOutgoing()">
       <ion-icon name="ios-card" color="outgoings"></ion-icon>
       <p>Minhas despesas</p>
     </button>
 
-    <button class="item-menu analysis" color="white" (click)="openAnalysis(incomes, outgoings, rest)">
+    <button class="item-menu analysis" ion-button color="white" (click)="openAnalysis(incomes, outgoings, rest)">
       <ion-icon name="stats" color="azul"></ion-icon>
       <p>Análise do mês</p>
     </button>
 
-    <button class="item-menu config" color="white" (click)="openConfig()">
+    <button class="item-menu config" ion-button color="white" (click)="openConfig()">
       <ion-icon name="cog" color="dark"></ion-icon>
       <p>Configurações</p>
     </button>
