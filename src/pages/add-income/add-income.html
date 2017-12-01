@@ -6,13 +6,33 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>add-income</ion-title>
+  <ion-navbar color="incomes">
+    <ion-title>Minhas receitas</ion-title>
   </ion-navbar>
+
+  <ion-toolbar color="incomes">
+    <ion-buttons left>
+      <button ion-button icon-only>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title class="text-center">Novembro</ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-fab bottom right>
+    <button ion-fab icon-only color="darkgreen">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>
