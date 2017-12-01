@@ -1,47 +1,182 @@
 page-home {
-    .info {
-        width: 100%;
-        height: 50vh;
-        background-color: color($colors, amarelo);
-        color: color($colors, white);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .body {
-            width: 100%;
+    .total-income{
+      height: 250px;
+      background-color: color($colors, fun);
+      color: color($colors, white);
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      h4, p{
+        text-align: right;
+      }
+    }
+  
+    .menu{
+      background-color: color($colors, light);
+      position: absolute;
+      top: 250px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      overflow: hidden;
+    }
+    .item-menu.incomes{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 50%;
+    }
+    .item-menu.spendings{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: 50%;
+    }
+    .item-menu.analysis{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 50%;
+      height: 50%;
+    }
+    .item-menu.config{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      height: 50%;
+    }
+  
+  
+    .item-menu p{
+      position: absolute;
+      bottom: 20px;
+      text-align: center;
+      left: 0;
+      right: 0;
+      top: 80px;
+      height: 16px;
+      margin: auto;
+    }
+    .item-menu{
+      text-align: center;
+      margin: 0;
+      border: 0;
+      box-shadow: none;
+    }
+    .item-menu ion-icon{
+      font-size: 70px;
+      padding: 0;
+      position: absolute;
+      bottom: 20px;
+      text-align: center;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 70px;
+      margin: auto;
+    }
+  
+  
+    ion-avatar{
+      text-align: center;
+      font-size: 25px;
+    }
+  
+    ion-col{
+      box-sizing: border-box;
+      padding: 10px;
+    }
+  
+    ion-row{
+      margin-top: 30px;
+      font-size: 19px;
+    }
+  
+    ion-col * {
+      margin: 3px;
+      color: color($colors, white);
+    }
+  
+    ion-col:first-of-type{
+      border-right: solid 1px color($colors, white);
+    }
+    ion-col:last-of-type{
+      border-left: solid 1px color($colors, white);
+    }
+  
+    .fab-list{
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      .shadow{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+  
+    button[round]{
+      height: 40px;
+      width: 40px;
+    }
+  
+    button[white]{
+      background-color: transparent;
+    }
+  
+    .fab-container{
+      position: absolute;
+      height: 200px;
+      bottom: 47px;
+      right: 0;
+  
+      ion-list{
+        background-color: transparent;
+        border: 0;
+        right: 9px;
+        bottom: 0;
+        width: 200px;
+        position: absolute;;
+      }
+  
+      ion-list *{
+        border: 0;
+      }
+  
+      ion-item *{
+  
+      }
+      ion-item{
+        background-color: transparent;
+        border: 0;
+        ion-label{
+          margin: 0;
+          height: 60px;
+          * {
+            float: right;
+          }
+          ion-badge{
+            margin-top: 15px;
+          }
         }
-
-        .income, .outgoing {
-            float: left;
-            width: 50%;
-            padding: 10px;
+        button{
+          position: initial;
+          margin-left: 10px;
+          height: 40px;
+          width: 40px;
+          ion-button-effect{
+            display: none !important;
+          }
         }
-
-        .income {
-            text-align: right;
-        }
-
-        .income-outgoing {
-            width: 100%;
-            float: left;
-        }
-
-        h2 {
-            margin: 0 0 40px 0;
-            text-align: center;
-            float: left;
-            width: 100%;
-        }
-
-        .income {
-            border-right: solid 1px color($colors, white);
-            margin: 0;
-        }
-
-        .outgoing {
-            border-left: solid 1px color($colors, white);
-            margin: 0;
-        }
+      }
     }
 }
