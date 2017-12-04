@@ -17,8 +17,8 @@ export class AddIncomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddIncomePage');
+  add() {
+    this.navCtrl.push(AddIncomePage);
   }
 
 }

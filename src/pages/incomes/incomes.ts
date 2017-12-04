@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AddIncomePage } from '../add-income/add-income';
 
 /**
- * Generated class for the IncomesPage page.
+ * Generated class for the AddIncomePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -17,8 +18,8 @@ export class IncomesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad IncomesPage');
+  add() {
+    this.navCtrl.push(AddIncomePage);
   }
 
 }

@@ -1,18 +1,38 @@
 <!--
-  Generated template for the IncomesPage page.
+  Generated template for the AddIncomePage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>incomes</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+  
+    <ion-navbar color="incomes">
+      <ion-title>Minhas receitas</ion-title>
+    </ion-navbar>
+  
+    <ion-toolbar color="incomes">
+      <ion-buttons left>
+        <button ion-button icon-only color="white">
+          <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+  
+      <ion-title class="text-center">Novembro</ion-title>
+  
+      <ion-buttons right>
+        <button ion-button icon-only color="white">
+          <ion-icon name="ios-arrow-forward"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  
+  </ion-header>
+  
+  
+  <ion-content>
+    <ion-fab bottom right>
+      <button ion-fab icon-only color="darkgreen" (click)="add()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-fab>
+  </ion-content>

@@ -1,9 +1,8 @@
 import { Component, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import Chart from 'chart.js';
-import { AddIncomePage } from '../add-income/add-income';
-import { AddOutgoingPage } from '../add-outgoing/add-outgoing';
 import { ReportPage } from '../report/report';
+import { IncomesPage } from '../incomes/incomes';
+import { OutgoingsPage } from '../outgoings/outgoings';
 
 @Component({
   selector: 'page-home',
@@ -19,10 +18,10 @@ export class HomePage {
   }
 
   openAddIncome() {
-    this.navCtrl.push(AddIncomePage);
+    this.navCtrl.push(IncomesPage);
   }
   openAddOutgoing() {
-    this.navCtrl.push(AddOutgoingPage);      
+    this.navCtrl.push(OutgoingsPage);      
   }
   openAnalysis(incomes = 0, outgoings = 100, rest = 0) {
     const investiments = 0;
