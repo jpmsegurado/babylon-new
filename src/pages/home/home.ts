@@ -19,13 +19,16 @@ export class HomePage {
   }
 
   openAddIncome() {
-      this.navCtrl.push(AddIncomePage);
+    this.navCtrl.push(AddIncomePage);
   }
   openAddOutgoing() {
-      this.navCtrl.push(AddOutgoingPage);      
+    this.navCtrl.push(AddOutgoingPage);      
   }
-  openAnalysis(incomes, outgoings, rest) {
-      this.navCtrl.push(ReportPage, { incomes, outgoings, rest });
+  openAnalysis(incomes = 0, outgoings = 100, rest = 0) {
+    const investiments = 0;
+    const keepings = 0;
+    const fun = 0;
+    this.navCtrl.push(ReportPage, { incomes, outgoings, investiments, keepings, rest, fun });
   }
   openConfig() {
       

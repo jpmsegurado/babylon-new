@@ -1,18 +1,31 @@
-<!--
-  Generated template for the ReportPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>report</ion-title>
+  <ion-navbar color="azul">
+    <ion-title>Análise do mês</ion-title>
   </ion-navbar>
 
 </ion-header>
 
+<ion-content class="analise">
+  <chart [incomes]="incomes" [outgoings]="outgoings" [investiments]="investiments" [keepings]="keepings" [rest]="rest" [fun]="fun"></chart>
 
-<ion-content padding>
+  <ion-list>
+    <ion-item class="outgoings">
+      <h2>Despesas - R$ {{ values.formattedOutgoings }}</h2>
+    </ion-item>
+    <ion-item class="fun">
+      <h2>Ao lazer - R$ {{ values.formattedInvestiments }}</h2>
+    </ion-item>
+    <ion-item class="keepings">
+      <h2>À ser guardado - R$ {{ values.formattedKeepings }}</h2>
+    </ion-item>
+    <ion-item class="investiments">
+      <h2>Invista em você - R$ {{ values.formattedFun }}</h2>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <button ion-button full color="azul" >Por quê esses valores?</button>
+  </div>
 
 </ion-content>

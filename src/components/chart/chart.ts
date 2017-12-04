@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
+import Chart from 'chart.js';
+import { NavParams } from 'ionic-angular/navigation/nav-params';
 
 /**
  * Generated class for the ChartComponent component.
@@ -12,11 +14,44 @@ import { Component } from '@angular/core';
 })
 export class ChartComponent {
 
-  text: string;
+  @Input() incomes: any;
+  @Input() outgoings: any;
+  @Input() investiments: any;
+  @Input() keepings: any;
+  @Input() rest: any;
+  @Input() fun: any;
+  private chart: any;
 
-  constructor() {
-    console.log('Hello ChartComponent Component');
-    this.text = 'Hello World';
+  constructor(
+    public element: ElementRef,
+    public params: NavParams,
+  ) {
+
   }
 
+  ngOnInit() {
+    setTimeout(() => {
+      const data = [this.outgoings, this.keepings, this.investiments, this.fun];
+      console.log(data);
+      let ctx = this.element.nativeElement.querySelector("#chart").getContext('2d');
+      let chartData = {
+        labels: [],
+        datasets: [
+          {
+            data,
+            backgroundColor: [
+              "#E82C0C",
+              '#02E87E',
+              '#1C83E8',
+              '#FFBC10'
+            ]
+          }]
+      };
+
+      this.chart = ctx != undefined && this.chart == null ? new Chart(ctx, { type: 'pie', data: chartData }) : null;
+
+    });
+  }
 }
+
+

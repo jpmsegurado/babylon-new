@@ -19,9 +19,8 @@ import { AddOutgoingPage } from '../pages/add-outgoing/add-outgoing';
 import { IncomesPage } from '../pages/incomes/incomes';
 import { AddIncomePage } from '../pages/add-income/add-income';
 import { LoginPage } from '../pages/login/login';
-
-import { ChartComponent } from '../components/chart/chart';
 import { ReportPage } from '../pages/report/report';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,6 @@ import { ReportPage } from '../pages/report/report';
     IncomesPage,
     AddIncomePage,
     LoginPage,
-    ChartComponent,
     ReportPage,
   ],
   imports: [
@@ -41,6 +39,7 @@ import { ReportPage } from '../pages/report/report';
     AngularFireModule.initializeApp(config.firebase),
     AngularFirestoreModule.enablePersistence(),
     IonicStorageModule.forRoot(),
+    ComponentsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,7 +50,6 @@ import { ReportPage } from '../pages/report/report';
     IncomesPage,
     AddIncomePage,
     LoginPage,
-    ChartComponent,
     ReportPage,
   ],
   providers: [
