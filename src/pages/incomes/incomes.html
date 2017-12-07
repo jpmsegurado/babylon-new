@@ -5,34 +5,50 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  
-    <ion-navbar color="incomes">
-      <ion-title>Minhas receitas</ion-title>
-    </ion-navbar>
-  
-    <ion-toolbar color="incomes">
-      <ion-buttons left>
-        <button ion-button icon-only color="white">
-          <ion-icon name="ios-arrow-back"></ion-icon>
-        </button>
-      </ion-buttons>
-  
-      <ion-title class="text-center">Novembro</ion-title>
-  
-      <ion-buttons right>
-        <button ion-button icon-only color="white">
-          <ion-icon name="ios-arrow-forward"></ion-icon>
-        </button>
-      </ion-buttons>
-    </ion-toolbar>
-  
-  </ion-header>
-  
-  
-  <ion-content>
-    <ion-fab bottom right>
-      <button ion-fab icon-only color="darkgreen" (click)="add()">
-        <ion-icon name="add"></ion-icon>
+
+  <ion-navbar color="incomes">
+    <ion-title>Minhas receitas</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar color="incomes">
+    <ion-buttons left>
+      <button ion-button icon-only color="white" (click)="previous()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
       </button>
-    </ion-fab>
-  </ion-content>
+    </ion-buttons>
+
+    <ion-title class="text-center">{{ mesEscolhido }}</ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only color="white" (click)="next()">
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <blank-state *ngIf="incomes.length === 0 && !loading" showIcon="true" iconName="sad">
+    <p>Você ainda não adicionou nenhuma receita</p>
+  </blank-state>
+
+  <blank-state *ngIf="loading" showSpinner="true">
+    <p>Carregando...</p>
+  </blank-state>
+
+  <ion-list *ngIf="!loading">
+    <ion-item *ngFor="let income of incomes" (click)="edit(income)">
+      <h2> {{ income.prettyValue }}</h2>
+      <p>{{ income.todoMes ? 'Receita mensal' : income.formattedDate }}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab icon-only color="darkgreen" (click)="add()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

@@ -20,7 +20,12 @@ import { IncomesPage } from '../pages/incomes/incomes';
 import { AddIncomePage } from '../pages/add-income/add-income';
 import { LoginPage } from '../pages/login/login';
 import { ReportPage } from '../pages/report/report';
-import { ComponentsModule } from '../components/components.module';
+import { Utils } from '../providers/utils';
+import { DatePicker } from '@ionic-native/date-picker';
+import { BlankStateComponent } from '../components/blank-state/blank-state';
+import { ChartComponent } from '../components/chart/chart';
+import { ConfigPage } from '../pages/config/config';
+import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
@@ -32,14 +37,17 @@ import { ComponentsModule } from '../components/components.module';
     AddIncomePage,
     LoginPage,
     ReportPage,
+    BlankStateComponent,
+    ChartComponent,
+    ConfigPage,
+    RegisterPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(config.firebase),
-    AngularFirestoreModule.enablePersistence(),
+    AngularFirestoreModule,
     IonicStorageModule.forRoot(),
-    ComponentsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,6 +59,8 @@ import { ComponentsModule } from '../components/components.module';
     AddIncomePage,
     LoginPage,
     ReportPage,
+    ConfigPage,
+    RegisterPage,
   ],
   providers: [
     AngularFireAuth,
@@ -59,7 +69,9 @@ import { ComponentsModule } from '../components/components.module';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     OutgoingProvider,
     IncomeProvider,
-    UserProvider
+    UserProvider,
+    Utils,
+    DatePicker,
   ]
 })
 export class AppModule {}

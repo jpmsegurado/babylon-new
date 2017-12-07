@@ -14,18 +14,31 @@
 
 
 <ion-content>
-  <form>
+  <form [formGroup]="form" (submit)="add(form)">
     <ion-list>
       <ion-item>
-        <ion-label></ion-label>
-        <ion-input></ion-input>
+        <ion-label>Valor</ion-label>
+        <ion-input type="tel" formControlName="valor" (keyup)="change()"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label></ion-label>
-        <ion-input></ion-input>
+        <ion-label color="gray">Todo mês?</ion-label>
+        <ion-toggle formControlName="todoMes" [(ngModel)]="todoMes"></ion-toggle>
       </ion-item>
-        
+
+      <ion-item *ngIf="!todoMes" class="pick-date" (tap)="pickDate($event)">
+        <ion-label>Recebimento</ion-label>
+        <ion-input type="date" formControlName="data"></ion-input>
+      </ion-item>
     </ion-list>
+
+    <div padding>
+      <button type="submit" ion-button color="darkgreen" block icon-right [disabled]="form.invalid || loading">
+        Adicionar receita
+        <ion-icon name="checkmark" *ngIf="!loading"></ion-icon>
+        <ion-spinner *ngIf="loading"></ion-spinner>
+      </button>
+    </div>
+
   </form>
 </ion-content>

@@ -6,5 +6,6 @@ export default {
         projectId: "babylon-961af",
         storageBucket: "babylon-961af.appspot.com",
         messagingSenderId: "866620002556"
-    }   
+    },
+    meses: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
 }
