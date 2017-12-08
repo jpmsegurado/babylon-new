@@ -6,7 +6,7 @@
       </div>
     </div> -->
   <div class="total-income">
-    <h4 class="text-center">Informações de Novembro</h4>
+    <h4 class="text-center">Informações de {{ mes }}</h4>
     <!-- <h1 class="text-center">
         R$ {{incomes}}
       </h1> -->
@@ -16,14 +16,14 @@
         <p>
           Receitas
         </p>
-        <p class="valor" *ngIf="!loading" ion-text color="income">R$ 2500,00</p>
+        <p class="valor" *ngIf="!loading" ion-text color="income">{{ 'R$ ' + incomes }}</p>
         <p *ngIf="loading">...</p>
       </ion-col>
       <ion-col width-50 class="text-left">
         <p>
           Despesas
         </p>
-        <p class="valor" *ngIf="!loading">R$ 800,00</p>
+        <p class="valor" *ngIf="!loading">{{ 'R$ ' + outgoings }}</p>
         <p *ngIf="loading">...</p>
       </ion-col>
     </ion-row>

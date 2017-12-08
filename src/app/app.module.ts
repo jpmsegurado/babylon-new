@@ -26,6 +26,8 @@ import { BlankStateComponent } from '../components/blank-state/blank-state';
 import { ChartComponent } from '../components/chart/chart';
 import { ConfigPage } from '../pages/config/config';
 import { RegisterPage } from '../pages/register/register';
+import * as firebase from 'firebase';
+firebase.initializeApp(config.firebase);
 
 @NgModule({
   declarations: [

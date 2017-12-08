@@ -33,6 +33,10 @@ export class IncomeProvider {
     }
   }
 
+  delete(email, id?): Promise<any> {
+    return this.db.collection('user').doc(email).collection('incomes').doc(id).delete();
+  }
+
   getAll(email) {
     return this.db.collection('user').doc(email).collection('incomes').get();
   }

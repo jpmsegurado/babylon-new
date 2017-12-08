@@ -41,7 +41,7 @@
 
   <ion-list *ngIf="!loading">
     <ion-item *ngFor="let income of incomes" (click)="edit(income)">
-      <h2> {{ income.prettyValue }}</h2>
+      <h2> {{ 'R$ ' + income.prettyValue }}</h2>
       <p>{{ income.todoMes ? 'Receita mensal' : income.formattedDate }}</p>
     </ion-item>
   </ion-list>

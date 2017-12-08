@@ -8,6 +8,13 @@
 
   <ion-navbar color="incomes">
     <ion-title>Adicionar receita</ion-title>
+    <ion-buttons end *ngIf="id">
+      <button ion-button icon-right (click)="delete()" [disabled]="loading || deleting">
+        Deletar
+        <ion-icon name="trash" *ngIf="!deleting"></ion-icon>
+        <ion-spinner *ngIf="deleting"></ion-spinner>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -33,8 +40,8 @@
     </ion-list>
 
     <div padding>
-      <button type="submit" ion-button color="darkgreen" block icon-right [disabled]="form.invalid || loading">
-        Adicionar receita
+      <button type="submit" ion-button color="darkgreen" block icon-right [disabled]="form.invalid || loading || deleting">
+        {{ id ? 'Salvar receita' : 'Adicionar receita' }}
         <ion-icon name="checkmark" *ngIf="!loading"></ion-icon>
         <ion-spinner *ngIf="loading"></ion-spinner>
       </button>

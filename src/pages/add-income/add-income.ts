@@ -28,6 +28,7 @@ export class AddIncomePage {
 
   public todoMes: Boolean = true;
   public loading: Boolean = false;
+  public deleting: Boolean = false;
   public id: any;
 
   constructor(
@@ -63,6 +64,19 @@ export class AddIncomePage {
       });
     }, () => {
       this.loading = false;
+    });
+  }
+
+  delete() {
+    this.deleting = true;
+    this.userProvider.getCurrentUser().subscribe(({ email }) => {
+      this.incomeProvider.delete(email, this.id).then(() => {
+        this.deleting = false;
+        this.navParams.get('reload')();
+        this.navCtrl.pop();
+      });
+    }, () => {
+      this.deleting = false;
     });
   }
 

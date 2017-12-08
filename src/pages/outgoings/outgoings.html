@@ -1,18 +1,55 @@
 <!--
-  Generated template for the OutgoingsPage page.
+  Generated template for the AddIncomePage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>outgoings</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+  
+    <ion-navbar color="outgoings">
+      <ion-title>Minhas despesas</ion-title>
+    </ion-navbar>
+  
+    <ion-toolbar color="outgoings">
+      <ion-buttons left>
+        <button ion-button icon-only color="white" (click)="previous()">
+          <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+  
+      <ion-title class="text-center">{{ mesEscolhido }}</ion-title>
+  
+      <ion-buttons right>
+        <button ion-button icon-only color="white" (click)="next()">
+          <ion-icon name="ios-arrow-forward"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  
+  </ion-header>
+  
+  
+  <ion-content>
+  
+    <blank-state *ngIf="outgoings.length === 0 && !loading" showIcon="true" iconName="sad">
+      <p>Você ainda não adicionou nenhuma despesa</p>
+    </blank-state>
+  
+    <blank-state *ngIf="loading" showSpinner="true">
+      <p>Carregando...</p>
+    </blank-state>
+  
+    <ion-list *ngIf="!loading">
+      <ion-item *ngFor="let outgoing of outgoings" (click)="edit(outgoing)">
+        <h2> {{ outgoing.descricao }}</h2>
+        <p> {{ 'R$ ' + outgoing.prettyValue }}</p>
+        <p>{{ outgoing.todoMes ? 'Despesa mensal' : outgoing.formattedDate }}</p>
+      </ion-item>
+    </ion-list>
+  
+    <ion-fab bottom right>
+      <button ion-fab icon-only color="darkred" (click)="add()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-fab>
+  </ion-content>

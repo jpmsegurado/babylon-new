@@ -31,7 +31,7 @@ export class ChartComponent {
 
   ngOnInit() {
     setTimeout(() => {
-      const data = [this.outgoings, this.keepings, this.investiments, this.fun];
+      const data = [this.outgoings, this.fun, this.keepings, this.investiments];
       console.log(data);
       let ctx = this.element.nativeElement.querySelector("#chart").getContext('2d');
       let chartData = {
@@ -41,14 +41,18 @@ export class ChartComponent {
             data,
             backgroundColor: [
               "#E82C0C",
+              '#FFBC10',
               '#02E87E',
               '#1C83E8',
-              '#FFBC10'
             ]
           }]
       };
 
-      this.chart = ctx != undefined && this.chart == null ? new Chart(ctx, { type: 'pie', data: chartData }) : null;
+      this.chart = ctx != undefined && this.chart == null ? new Chart(ctx, { type: 'pie', data: chartData, options: {
+        tooltips: {
+          enabled: false
+        },
+      } }) : null;
 
     });
   }

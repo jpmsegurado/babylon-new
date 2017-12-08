@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavParams } from 'ionic-angular';
 import { ChartComponent } from '../../components/chart/chart';
 import accounting from 'accounting';
+import VMasker from 'vanilla-masker';
 /*
   Generated class for the AnalisePage page.
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
@@ -31,10 +32,10 @@ export class ReportPage {
     this.rest = params.get('rest');
     this.fun = params.get('fun');
 
-    this.values.formattedOutgoings = this.outgoings;
-    this.values.formattedInvestiments = this.investiments;
-    this.values.formattedKeepings = this.keepings;
-    this.values.formattedFun = this.fun;
+    this.values.formattedOutgoings = VMasker.toMoney(this.outgoings.toFixed(2));
+    this.values.formattedInvestiments = VMasker.toMoney(this.investiments.toFixed(2));
+    this.values.formattedKeepings = VMasker.toMoney(this.keepings.toFixed(2));
+    this.values.formattedFun = VMasker.toMoney(this.fun.toFixed(2));
 
     this.accounting = accounting;
 
